@@ -1,4 +1,5 @@
 /**
+ * 1894. Find the Student that Will Replace the Chalk
  * @param {number[]} chalk
  * @param {number} k
  * @return {number}
