@@ -21,4 +21,4 @@ const largeGroupPositions = (s) => {
   return solution;
 };
 
-largeGroupPositions("abcdddeeeeaabbbcd");
+console.log(largeGroupPositions("abcdddeeeeaabbbcd"));

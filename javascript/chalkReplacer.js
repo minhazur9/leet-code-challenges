@@ -15,4 +15,4 @@ const chalkReplacer = (chalk, k) => {
   return index;
 };
 
-chalkReplacer([3, 4, 1, 2], 25);
+console.log(chalkReplacer([3, 4, 1, 2], 25));
