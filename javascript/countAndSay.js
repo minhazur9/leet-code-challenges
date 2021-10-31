@@ -20,4 +20,4 @@ const countAndSay = (n) => {
   return result;
 };
 
-countAndSay(5);
+console.log(countAndSay(100));
