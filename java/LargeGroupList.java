@@ -11,8 +11,8 @@ class LargeGroupList {
             if (charGroup != s.charAt(i)) {
                 end = i - 1;
                 if (end - start >= 2) {
-                    int[] positions = { start, end };
-                    SOLUTION.add(positions);
+                    final int[] POSITIONS = { start, end };
+                    SOLUTION.add(POSITIONS);
                 }
                 start = i;
                 charGroup = s.charAt(i);
@@ -20,8 +20,8 @@ class LargeGroupList {
         }
         end = s.length() - 1;
         if (end - start >= 2) {
-            int[] positions = { start, end };
-            SOLUTION.add(positions);
+            final int[] POSITIONS = { start, end };
+            SOLUTION.add(POSITIONS);
         }
         return SOLUTION;
     }
