@@ -21,4 +21,6 @@ const largeGroupPositions = (s) => {
   return solution;
 };
 
+console.time("performance");
 console.log(largeGroupPositions("abcdddeeeeaabbbcd"));
+console.timeEnd("performance");

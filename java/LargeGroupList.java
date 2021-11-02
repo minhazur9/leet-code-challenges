@@ -36,8 +36,12 @@ class LargeGroupList {
     }
 
     public static void main(String[] args) {
+        long startTime = System.nanoTime();
         LargeGroupList largeGroupList = new LargeGroupList();
         final ArrayList<int[]> SOLUTION = largeGroupList.largeGroupPositions("abcdddeeeeaabbbcd");
         largeGroupList.printSolution(SOLUTION);
+        long endTime = System.nanoTime();
+        double totalTime = (double) (endTime - startTime) / 1000000;
+        System.out.println(totalTime + " milliseconds");
     }
 }

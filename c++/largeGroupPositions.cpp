@@ -1,10 +1,14 @@
 #include <iostream>
 #include <vector>
 #include <array>
+#include <chrono>
 
 using std::array;
 using std::string;
 using std::vector;
+using std::chrono::duration;
+using std::chrono::high_resolution_clock;
+using std::chrono::milliseconds;
 
 void printSolution(vector<array<int, 2>> solution)
 {
@@ -24,7 +28,7 @@ void printSolution(vector<array<int, 2>> solution)
         result += "]";
     }
     result += "]";
-    std::cout << result;
+    std::cout << result << std::endl;
 }
 
 vector<array<int, 2>> largeGroupPositions(string s)
@@ -58,6 +62,10 @@ vector<array<int, 2>> largeGroupPositions(string s)
 
 int main()
 {
+    auto t1 = high_resolution_clock::now();
     const vector<array<int, 2>> solution = largeGroupPositions("abcdddeeeeaabbbcd");
     printSolution(solution);
+    auto t2 = high_resolution_clock::now();
+    duration<double, std::milli> elapsed = t2 - t1;
+    std::cout << elapsed.count() << "milliseconds";
 }

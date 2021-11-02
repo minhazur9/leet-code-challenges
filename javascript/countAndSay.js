@@ -9,10 +9,10 @@ const countAndSay = (n) => {
   let result = "";
   let counter = 0;
   let digitGroup = digitString[0];
-  for (let i = 0; i < digitString.length; i++) {
-    if (digitString[i] !== digitGroup) {
+  for (digit of digitString) {
+    if (digit !== digitGroup) {
       result = result + counter + digitGroup;
-      digitGroup = digitString[i];
+      digitGroup = digit;
       counter = 1;
     } else counter++;
   }
@@ -20,4 +20,6 @@ const countAndSay = (n) => {
   return result;
 };
 
-console.log(countAndSay(100));
+console.time("performance");
+console.log(countAndSay(5));
+console.timeEnd("performance");
