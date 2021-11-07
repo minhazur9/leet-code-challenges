@@ -4,12 +4,19 @@
  * @return {boolean}
  */
 const isValid = (s) => {
-  const regExp = new RegExp("\\(\\)|\\[\\]|{}", "g");
-  while (s !== "") {
-    if (s.match(regExp)) s = s.replace(regExp, "");
+  const stack = [];
+  for (let character of s) {
+    if (character === "(" || character === "{" || character === "[")
+      stack.unshift(character);
+    else if (character === ")" && stack.length > 0 && stack[0] === "(")
+      stack.shift();
+    else if (character === "}" && stack.length > 0 && stack[0] === "{")
+      stack.shift();
+    else if (character === "]" && stack.length > 0 && stack[0] === "[")
+      stack.shift();
     else return false;
   }
-  return true;
+  return stack.length === 0;
 };
 
 console.time("performance");
